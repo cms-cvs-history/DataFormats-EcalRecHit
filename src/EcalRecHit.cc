@@ -58,7 +58,7 @@ void EcalRecHit::setChi2Prob( float chi2Prob )
 
 void EcalRecHit::setOutOfTimeEnergy( float energy )
 {
-        if ( energy > 0 ) {
+        if ( energy > 0.001 ) {
                 uint16_t exponent = lround(floor(log10(energy)))+3;
                 uint16_t significand = lround(energy/pow(10,exponent-5));
                 // use 13 bits (3 exponent, 10 significand)
